@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* 
+Cómo instalar y usar sass 
+en la terminal: npm install -g sass
+en la terminal y desde la raiz del proyecto: sass /carpeta/archivofuente.scss /carpeta/archivoDestino.css --watch
+¡and that's it, folks! magic.
+*/
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,700");
+body {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: #fafafa;
+}
+
+a {
+  color: #999;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+a:hover {
+  color: #000000;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 0 32px;
+  height: 54px;
+  box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*# sourceMappingURL=style.css.map */
