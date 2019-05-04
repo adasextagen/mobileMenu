@@ -1,16 +1,21 @@
 //Fuentes Externas
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
-
+ 
 //Variables
-$transitions: all 0.3s;
+$transitions: all 0.5s;
 
 //Estilos
+html{
+    height: 100%;
+}
 body{
     margin: 0;
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    background-color: #fafafa
+    background-color: #fafafa;
+    height: 100%;
+    overflow: hidden;
 }
 
 a{
@@ -20,8 +25,11 @@ a{
     &:hover{
         color: #000000;
     }
-    // @media only screen and (max-width:600px){ }
+    &.logo{
+        display: inline-block;
+    }
 }
+
 
 header{
     background-color: #ffffff;
@@ -39,5 +47,57 @@ header{
 
     nav, .toggleMobileMenu{
         float: right;
+    }
+
+    nav{
+        ul{
+            margin:24px 0;
+            padding:0;
+            list-style: none;
+            z-index:1;
+            transition: $transitions;
+            
+            &.open{
+                transform: translate(-100vw)
+            }
+
+            @media only screen and (max-width:600px) {
+                margin: 0;
+                position: absolute;
+                height: 100vh;
+                width:100vw;
+                top: 0;
+                right: -100vw;
+                background-color: #333;
+            }
+            li{
+                float: left;
+                margin-left: 16px;
+                @media only screen and (max-width:600px) {
+                    width: 100%;
+                    margin: 8px 0 8px 32px;
+                }
+                a{
+                    @media only screen and (max-width:600px) {
+                        color: #cccccc
+                    }
+                }
+            }
+        }
+    }
+
+    .toggleMobileMenu{
+        display: none;
+        z-index: 2;
+        top: 16px;
+        right:16px;
+        &:hover{
+            color: #fff;
+        }
+        @media only screen and (max-width:600px){
+            position: absolute;
+            display: block
+
+        }
     }
 }
