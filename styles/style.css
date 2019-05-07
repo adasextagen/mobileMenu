@@ -1,10 +1,16 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,700");
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Oswald", sans-serif;
   font-weight: 400;
   font-size: 16px;
   background-color: #fafafa;
+  overflow: hidden;
 }
 
 a {
@@ -31,6 +37,58 @@ header .logo {
 }
 header nav, header .toggleMobileMenu {
   float: right;
+}
+header nav ul {
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+header nav ul.open {
+  transform: translate(-100vw);
+  /*en mobile está en principio escondido. Esto es porque si le cambio la posición right redibuja todo el elemento y es menos performante*/
+}
+@media only screen and (max-width: 600px) {
+  header nav ul {
+    margin: 0;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    right: -100vw;
+    background-color: #333;
+  }
+}
+header nav ul li {
+  float: left;
+  margin-left: 16px;
+}
+@media only screen and (max-width: 600px) {
+  header nav ul li {
+    width: 100%;
+    margin: 8px 0 8px 32px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  header nav ul li a:hover {
+    color: #fff;
+  }
+}
+header .toggleMobileMenu {
+  display: none;
+  z-index: 999;
+  /*posición en el eje z que agrego con position absolute*/
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+header .toggleMobileMenu:hover {
+  color: #fff;
+}
+@media only screen and (max-width: 600px) {
+  header .toggleMobileMenu {
+    display: block;
+    position: absolute;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
